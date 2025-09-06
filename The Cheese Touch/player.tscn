@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://t5ojlxxhrw4m"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 120.0
+const JUMP_VELOCITY = -350.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sh265"]
+load_path = "res://.godot/imported/harryIdle1.png-9c924538b738a7aa0c710e41e9f547d2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = SubResource("CompressedTexture2D_sh265")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4flbx"]
+load_path = "res://.godot/imported/harryIdle2.png-e12a8a62ae3f6db75753eceffd1d2357.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = SubResource("CompressedTexture2D_4flbx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 4.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_4flbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.581101
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_i3pqv")
