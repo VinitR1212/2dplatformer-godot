@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bx31jqob7gvfk" path="res://maps/w1l1.gd" id="1_0th10"]
 [ext_resource type="Texture2D" uid="uid://dkabfbkfwmu1i" path="res://assets/myassets/gundamstore.png" id="2_ribek"]
-[ext_resource type="PackedScene" uid="uid://t5ojlxxhrw4m" path="res://scenes/player.tscn" id="3_ckkiy"]
+[ext_resource type="PackedScene" uid="uid://t5ojlxxhrw4m" path="res://player.tscn" id="3_ckkiy"]
 [ext_resource type="PackedScene" uid="uid://blaewp3372o11" path="res://scenes/cheese.tscn" id="4_3v8ru"]
 [ext_resource type="PackedScene" uid="uid://2gfjtec1sstf" path="res://scenes/killzone.tscn" id="5_jybd2"]
 [ext_resource type="PackedScene" uid="uid://opq2v6u335aw" path="res://scenes/enemy.tscn" id="6_rbedx"]
