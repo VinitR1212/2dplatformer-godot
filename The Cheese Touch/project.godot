@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Platformer"
-run/main_scene="uid://ci5qix8v7vwbs"
+run/main_scene="uid://fbkdr325o4oi"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Functions="*res://Functions.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 

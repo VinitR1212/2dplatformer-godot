@@ -30,18 +30,18 @@ texture = SubResource("GradientTexture1D_ku3bi")
 
 [node name="Label" type="Label" parent="Control/TextureRect"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 576.0
-offset_right = 99.0
-offset_bottom = 599.0
+offset_left = 20.0
+offset_top = 651.0
+offset_right = 95.0
+offset_bottom = 674.0
 scale = Vector2(2.17398, 2.17398)
 text = "Loading..."
 
 [node name="Label2" type="Label" parent="Control/TextureRect"]
 layout_mode = 0
-offset_left = 712.0
-offset_top = 16.0
-offset_right = 906.0
-offset_bottom = 39.0
+offset_left = 830.0
+offset_top = 25.0
+offset_right = 1024.0
+offset_bottom = 48.0
 scale = Vector2(2.17398, 2.17398)
 text = "The Cheese Touch (BETA)"
