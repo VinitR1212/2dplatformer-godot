@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://duh377muvgb"]
+
+[ext_resource type="Script" uid="uid://cemnujogjhddb" path="res://world_icon.gd" id="1_2oca5"]
+[ext_resource type="PackedScene" uid="uid://bi07hegr5fa41" path="res://scenes/level_select.tscn" id="2_13bgd"]
+
+[sub_resource type="Gradient" id="Gradient_f4q7l"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2oca5"]
+gradient = SubResource("Gradient_f4q7l")
+width = 64
+
+[node name="WorldIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2oca5")
+level_select_packed = ExtResource("2_13bgd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 104.0
+offset_bottom = 16.0
+scale = Vector2(0.5, 0.5)
+text = "World 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture1D_2oca5")
