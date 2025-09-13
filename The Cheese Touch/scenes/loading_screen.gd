@@ -14,7 +14,7 @@ func _process(delta):
 		await get_tree().create_timer(1).timeout # Added a delay for testing purposes. Can be removed in the final game.
 		var new_scene: PackedScene = ResourceLoader.load_threaded_get(next_scene_path) # Gets the loaded scene, which is packed, so it'll have to be manually instantiated
 		var new_node = new_scene.instantiate() # Instantiates a copy of the loaded scene
-		new_node.parameters = parameters # Assigns parameters to new scene
+		#new_node.parameters = parameters # Assigns parameters to new scene
 		var current_scene = get_tree().current_scene # Stores the currently active scene, so we can replace it later
 		get_tree().get_root().add_child(new_node) # Adds the new scene to the scene tree. This MUST happen before assigning it as the current scene.
 		get_tree().current_scene = new_node # Assigns our new scene as the current scene
